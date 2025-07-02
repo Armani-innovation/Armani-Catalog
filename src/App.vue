@@ -6,6 +6,7 @@ const bookContainer = ref(null)
 
 const pages = [
   `${import.meta.env.BASE_URL}images/001.jpg`,
+  `${import.meta.env.BASE_URL}images/002.jpg`,
   `${import.meta.env.BASE_URL}images/003.jpg`,
   `${import.meta.env.BASE_URL}images/004.jpg`,
   `${import.meta.env.BASE_URL}images/005.jpg`,
@@ -35,7 +36,7 @@ onMounted(() => {
     width: 494,
     height: 700,
     size: 'fixed',
-    showCover: true,
+    showCover: false,
     maxShadowOpacity: 0.5,
     useMouseEvents: true,
     flippingTime: 1000,
@@ -48,7 +49,7 @@ onMounted(() => {
   })
 
   flipBook.loadFromImages([...pages].reverse())
-  flipBook.flip(pages.length - (pages.length % 2 === 0 ? 1 : 2))
+  flipBook.flip(pages.length - (pages.length % 2 === 0 ? 2 : 1))
 
   flipBook.on('flip', () => {
     sound.currentTime = 0
