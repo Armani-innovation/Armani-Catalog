@@ -47,7 +47,7 @@ onMounted(() => {
       // حالت افقی: هر دو صفحه باید در عرض جا بشن، مثلاً 90٪ از عرض کل
       const maxTotalWidth = vw * 0.9;
       pageWidth = maxTotalWidth / 2;
-      pageHeight = pageWidth / aspectRatio;
+      pageHeight = (pageWidth / aspectRatio) - 200 ;
 
       // در صورتی که ارتفاع بیشتر از صفحه بشه، با VH محدودش می‌کنیم
       if (pageHeight > vh * 0.9) {
@@ -56,7 +56,7 @@ onMounted(() => {
       }
     } else {
       // حالت عمودی: سایز تک صفحه مثل قبل
-      pageWidth = vw * 0.45;
+      pageWidth = vw * 0.25;
       pageHeight = pageWidth / aspectRatio;
 
       if (pageHeight > vh * 0.9) {
@@ -108,7 +108,6 @@ onMounted(() => {
     });
   });
 })
-
 
 
 </script>
